@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Viewport</title>
+  <meta name="description" content="viewport - tool to test website's responsiveness">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link href="public/stylesheets/screen.css" rel="stylesheet" media="all" />
+</head>
+<body>
+
+  <header>
+    <div id="dropdead">
+      <button class="btn"></button>
+      <ul></ul>
+    </div>
+    <button class="btn entypo" id="add-url">&#128279;</button>
+    <button class="btn entypo" id="reload">&#128260;</button>
+  </header>
+
+  <div id="target">
+    <iframe src="" frameborder="0" id="targetFrame"></iframe>
+  </div>
+
+  <div id="notify"></div>
+
+  <script src="public/javascripts/app.js"></script>
+  <script>
+    Viewport.init();
+  </script>
+</body>
+</html>
