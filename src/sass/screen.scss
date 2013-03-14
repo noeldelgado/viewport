@@ -4,6 +4,13 @@ $dark: #243038;
 $light: #f0f0f0;
 $blue: #0066cc;
 
+::-webkit-scrollbar {height: 8px; width: 8px; background-color: transparent;}
+::-webkit-scrollbar-thumb {
+    background: darken($light, 15);
+    -webkit-border-radius: 10px;
+    box-shadow: inset 0 0 0 1px darken($light, 30);
+}
+
 html {
     padding: 20px;
     font-size: 16px;
