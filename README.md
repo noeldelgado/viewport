@@ -1,8 +1,6 @@
-## Viewport
+## Viewport (WIP)
 
-* WIP
-
-Tool to test website's responsiveness
+Tool to test website's responsiveness: http://noeldelgado.github.com/viewport/
 
 #### Use the console
 
