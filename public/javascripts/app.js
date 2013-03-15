@@ -90,7 +90,7 @@ var Viewport = (function(){
 
     var getUrl = function() {
         var pattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/,
-            url     = prompt("Enter URL:");
+            url     = prompt("Enter URL:", "http://");
         if (url !== null) {
             pattern.test(url)
                 ? setURL(url)
@@ -107,7 +107,7 @@ var Viewport = (function(){
     };
 
     return  {
-        url: "http://git.local/js/01-public/text-to-binary/",
+        url: "http://pixelia.me/",
         init    : init,
         setSize : setSize,
         setURL  : setURL,
