@@ -1,22 +1,21 @@
 @import "compass", "compass/css3", "compass/reset", "mixins";
 
-$dark: #243038;
-$light: #f0f0f0;
-$blue: #0066cc;
+$primary: #243038;
+$contrast: #f0f0f0;
 
 ::-webkit-scrollbar {height: 8px; width: 8px; background-color: transparent;}
 ::-webkit-scrollbar-thumb {
-    background: darken($light, 15);
+    background: darken($contrast, 15);
     -webkit-border-radius: 10px;
-    box-shadow: inset 0 0 0 1px darken($light, 30);
+    box-shadow: inset 0 0 0 1px darken($contrast, 30);
 }
 
 html {
     padding: 20px;
     font-size: 16px;
     font-family: "Helvetica";
-    background-color: $dark;
-    color: $light;
+    background-color: $primary;
+    color: $contrast;
     text-align: center;
 }
 
@@ -32,63 +31,52 @@ header {
     margin: 0 auto;
     resize: both;
     overflow: hidden;
-    padding: 10px;
+    padding: 4px;
     min-width: 240px;
+    background-color: transparentize(darken($primary, 4), 0.4);
+    // @include border-radius(9px);
+    @include box-shadow(inset 0 0 5px rgba(0,0,0,0.5));
     @include transition(width 200ms ease);
 }
 
 iframe {
     width: 100%;
     height: 100%;
-    @include box-shadow(0 0 10px 1px transparentize(darken($dark, 20), 0.5) );
+    // @include border-radius(4px);
+    @include box-shadow(0 0 10px 1px transparentize(darken($primary, 20), 0.5) );
+    resize: none;
 }
 
 #dropdead {
     position: relative;
     display: inline-block;
+    min-width: 200px;
     font-size: 12px;
     text-align: left;
     button {
-        display: block;
+        position: absolute;
+        top: 0;
         min-width: 200px;
         padding: 5px 30px 5px 10px;
         &::after {
             content: "";
             position: absolute;
             right: 12px;
-            top: 12px;
+            top: 10px;
             width: 0px;
             height: 0px;
             border-width: 3px;
             border-style: solid;
-            border-color: lighten($dark, 70) transparent transparent transparent;
+            border-color: lighten($primary, 70) transparent transparent transparent;
         }
     }
-    ul {
-        position: absolute;
+    select {
+        position: relative;
         width: 100%;
-        @include box-sizing(border-box);
-        border-width: 1px;
-        border-style: solid;
-        border-color: darken($dark, 10) darken($dark, 20) darken($dark, 30);
-        background-color: $light;
-        color: lighten($dark, 20);
-        @include border-radius(0 0 3px 3px);
-        @include background-clip(padding-box);
-        @include box-shadow(0 0 0px 3px transparentize($dark, 0.9));
-        li {
-            padding: 5px 10px;
-            border-bottom: 1px solid lighten($dark, 20);
-            cursor: pointer;
-            &:last-child {
-                border-bottom: none;
-            }
-            &:active,
-            &.active {
-                background-color: transparentize($blue, 0.3);
-                color: $light;
-            }
-        }
+        height: 25px;
+        z-index: 10;
+        @include opacity(0);
+        @include appearance(none);
     }
 }
 
@@ -104,32 +92,32 @@ button {
     height: 25px;
     border-width: 1px;
     border-style: solid;
-    border-color: darken($dark, 10) darken($dark, 20) darken($dark, 30);
-    background-color: lighten($dark, 20);
-    @include background-image(linear-gradient(color-stops(lighten($dark, 20), lighten($dark, 10))));
+    border-color: darken($primary, 10) darken($primary, 20) darken($primary, 30);
+    background-color: lighten($primary, 20);
+    @include background-image(linear-gradient(color-stops(lighten($primary, 20), lighten($primary, 10))));
     @include border-radius(2px);
     @include background-clip(padding-box);
     @include box-shadow(
-        inset 0 0 0 2px transparentize($light, 0.9),
-        inset 0 1px transparentize($light, 0.7),
-        0 0 0 2px darken($dark, 4),
-        0px 3px 0px transparentize($light, 0.9)
+        inset 0 0 0 2px transparentize($contrast, 0.9),
+        inset 0 1px transparentize($contrast, 0.7),
+        0 0 0 2px darken($primary, 4),
+        0px 3px 0px transparentize($contrast, 0.95)
     );
     font-family: inherit;
     color: inherit;
     text-align: inherit;
     &:hover {
-        background-color: lighten($dark, 25);
-        @include background-image(linear-gradient(color-stops(lighten($dark, 25), lighten($dark, 15))));
+        background-color: lighten($primary, 25);
+        @include background-image(linear-gradient(color-stops(lighten($primary, 25), lighten($primary, 15))));
     }
     &.active,
     &:active {
         position: relative;
         top: 1px;
-        background-color: darken($dark, 5);
-        @include background-image(linear-gradient(color-stops(darken($dark, 5), darken($dark, 5))));
+        background-color: darken($primary, 5);
+        @include background-image(linear-gradient(color-stops(darken($primary, 5), darken($primary, 5))));
         @include box-shadow(
-            0px -1px transparentize($light, 0.9)
+            0px -1px transparentize($contrast, 0.9)
         );
     }
 }
@@ -141,9 +129,9 @@ button {
     top: 20px;
     padding: 10px 15px;
     font-size: 11px;
-    border: 1px solid darken($dark,10);
-    color: transparentize($light, 0.3);
-    background: transparentize( darken($dark, 7), 0.1 );
+    border: 1px solid darken($primary,10);
+    color: transparentize($contrast, 0.3);
+    background: transparentize( darken($primary, 7), 0.1 );
     @include border-radius(3px);
 }
 
