@@ -5,7 +5,9 @@ var Viewport = (function(){
         _dropdown   = {},
         _url        = document.getElementById('add-url'),
         _reload     = document.getElementById('reload'),
-        _notify     = document.getElementById('notify');
+        _rotate     = document.getElementById('rotate'),
+        _notify     = document.getElementById('notify'),
+        __current   = {width: null, height: null};
 
     _dropdown.element   = document.getElementById('dropdead');
     _dropdown.current   = _dropdown.element.querySelector('button');
@@ -32,6 +34,7 @@ var Viewport = (function(){
     var bindEvents = function() {
         _url.addEventListener('click', getUrl, false);
         _reload.addEventListener('click', reload, false);
+        _rotate.addEventListener('click', rotate, false);
 
         _dropdown.list.addEventListener('mousedown', function(event) {
             _dropdown.current.classList.add("active");
@@ -75,6 +78,8 @@ var Viewport = (function(){
     var setSize = function(w, h) {
         _target.style.width     = w + 'px';
         _target.style.height    = h + 'px';
+        __current.width     = w;
+        __current.height    = h;
         return this;
     };
 
@@ -86,6 +91,10 @@ var Viewport = (function(){
     var reload = function() {
         _iframe.src = _iframe.src;
         return this;
+    };
+
+    var rotate = function() {
+        setSize(__current.height, __current.width);
     };
 
     var getUrl = function() {

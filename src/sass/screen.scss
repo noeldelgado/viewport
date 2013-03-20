@@ -50,7 +50,6 @@ iframe {
 #dropdead {
     position: relative;
     display: inline-block;
-    margin-right: 15px;
     min-width: 200px;
     font-size: 12px;
     text-align: left;
@@ -85,6 +84,10 @@ iframe {
     }
 }
 
+#rotate {
+    margin-right: 15px;
+}
+
 button {
     cursor: pointer;
 }
@@ -92,7 +95,7 @@ button {
 .btn {
     display: inline-block;
     margin: 0;
-    font-size: 12px;
+    font-size: 11px;
     padding: 5px 10px;
     height: 25px;
     border-width: 1px;
