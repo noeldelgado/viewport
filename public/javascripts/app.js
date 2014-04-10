@@ -22,12 +22,17 @@ var Viewport = (function(){
     };
     var defaultPreset = presets["iphone"];
 
-    var init = function() {
+    var url_pattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+
+    var init = function(options) {
+        var hash_url = window.location.hash.split('#/')[1],
+            url = url_pattern.test(hash_url) || options.url;
+
         createDropdown();
         updateDropdown(defaultPreset.w, defaultPreset.h, defaultPreset.desc);
         _dropdown.list[1].selected = true; // :(
         setSize(defaultPreset.w, defaultPreset.h);
-        setURL(this.url);
+        setURL(url);
         bindEvents();
     };
 
@@ -85,6 +90,7 @@ var Viewport = (function(){
 
     var setURL = function(url) {
         _iframe.src = url;
+        window.location.hash = '/' + url;
         return this;
     };
 
@@ -98,12 +104,9 @@ var Viewport = (function(){
     };
 
     var getUrl = function() {
-        var pattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/,
-            url     = prompt("Enter URL:", "http://");
+        var url = prompt("Enter URL:", "http://");
         if (url !== null) {
-            pattern.test(url)
-                ? setURL(url)
-                : notify("Invalid URL");
+            url_pattern.test(url) ? setURL(url) : notify("Invalid URL");
         }
     };
 
@@ -116,7 +119,6 @@ var Viewport = (function(){
     };
 
     return  {
-        url: "http://pixelia.me/",
         init    : init,
         setSize : setSize,
         setURL  : setURL,
