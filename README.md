@@ -1,20 +1,11 @@
-## Viewport (WIP)
+## Viewport
 
 Tool to test website's responsiveness: http://noeldelgado.github.com/viewport/
 
-#### Use the console
+## Dev
+````sh
+npm install gulp -g
+npm install
+gulp
+````
 
-##### setURL
-```js
-Viewport.setURL('http://yourpath.com');
-```
-
-##### setSize
-```js
-Viewport.setSize(450, 500)
-```
-
-##### reload
-```js
-Viewport.reload()
-```

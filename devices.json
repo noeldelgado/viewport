@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Small Phone",
+    "width": "240",
+    "height": "320"
+  },
+  {
+    "name": "Apple iPhone 3GS, 4",
+    "width": "320",
+    "height": "480"
+  },
+  {
+    "name": "Apple iPhone 5",
+    "width": "320",
+    "height": "568"
+  },
+  {
+    "name": "Apple iPhone 6",
+    "width": "375",
+    "height": "667"
+  },
+  {
+    "name": "Apple iPhone 6 Plus",
+    "width": "414",
+    "height": "736"
+  },
+  {
+    "name": "Apple iPad",
+    "width": "768",
+    "height": "1024"
+  },
+  {
+    "name": "Google Nexus 4",
+    "width": "384",
+    "height": "640"
+  },
+  {
+    "name": "Google Nexus 5",
+    "width": "360",
+    "height": "640"
+  },
+  {
+    "name": "Google Nexus 7",
+    "width": "966",
+    "height": "604"
+  },
+  {
+    "name": "Google Nexus 7 2",
+    "width": "960",
+    "height": "600"
+  },
+  {
+    "name": "Google Nexus 10",
+    "width": "1280",
+    "height": "800"
+  },
+  {
+    "name": "Google Nexus S",
+    "width": "320",
+    "height": "533"
+  },
+  {
+    "name": "Widescreen",
+    "width": "1280",
+    "height": "800"
+  }
+]

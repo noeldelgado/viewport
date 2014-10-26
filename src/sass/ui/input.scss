@@ -1,0 +1,16 @@
+#{$ns}input {
+  font-size: $base-font-size;
+  vertical-align: top;
+  padding: .2em .4em;
+  border: 1px solid darken($white, 16%);
+  font-family: inherit;
+  color: darken($white, 45%);
+  border-radius: .25em;
+  box-shadow: inset 0 .2em 0 darken($white, 5%);
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: inset 0 .2em 0 lighten($primary-color, 35%);
+  }
+}

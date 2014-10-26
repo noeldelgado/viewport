@@ -1,37 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Viewport</title>
-  <meta name="description" content="viewport - tool to test website's responsiveness">
+  <meta charset="utf-8"/>
+  <title>Viewport - Test Responsive Websites</title>
+  <meta name="description" content="viewport - online tool to test website's responsiveness">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <link href="public/stylesheets/screen.css" rel="stylesheet" media="all" />
+  <link href="/dist/css/app.css" rel="stylesheet" media="all" />
 </head>
 <body>
-
   <header>
-    <div id="dropdead">
-      <select></select>
-      <button class="btn"></button>
-    </div>
-    <button class="btn secondary" id="rotate">Rotate</button>
-    <button class="btn entypo secondary" id="add-url">&#128279;</button>
-    <button class="btn entypo secondary" id="reload">&#128260;</button>
+    <h1 class="logo">Viewport</h1>
   </header>
-
-  <div class="frame">
-    <div id="target">
-      <iframe src="" frameborder="0" id="targetFrame"></iframe>
-    </div>
-  </div>
-
-  <div id="notify"></div>
-
-  <script src="public/javascripts/app.js"></script>
-  <script>
-    Viewport.init({
-      url : "http://pixelia.me/"
-    });
-  </script>
+  <section class="drawer"></section>
+  <script src="dist/js/app.js"></script>
 </body>
 </html>

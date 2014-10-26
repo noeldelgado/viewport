@@ -1,0 +1,124 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "ui/button";
+@import "ui/input";
+@import "ui/dropdown";
+@import "ui/viewport-frame";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-size: $base-font-size;
+  line-height: 1.5em;
+  font-family: sans-serif;
+  background-color: $white;
+  color: darken($white, 70%);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: .6em 1em;
+  border-bottom: 1px solid darken($white, 20%);
+  background-color: $white;
+
+  > * {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .logo {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0 .6em 0 0;
+    padding: .05em .6em 0 0;
+    color: darken($white, 30%);
+    border-right: 1px solid darken($white, 10%);
+  }
+
+  #{$ns}button,
+  #{$ns}input {
+    font-size: .8em;
+    height: 22px;
+  }
+
+  .url-input-component {
+    margin-right: 1em;
+
+    .url-input {
+      #{$ns}input {
+        border-right-width: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+    .url-button-go {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  #{$ns}dropdown {
+    width: 140px;
+    margin-right: 1em;
+
+    #{$ns}button {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .input-dimension {
+    margin-right: .5em;
+
+    #{$ns}input {
+      width: 5em;
+    }
+  }
+
+  .rotate-button {
+    .entypo {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1.8em;
+      line-height: 0;
+      margin-top: -3px;
+      font-weight: bold;
+    }
+  }
+
+  label {
+    span {
+      font-weight: 600;
+      font-size: .8em;
+      margin-right: .5em;
+    }
+  }
+}
+
+.drawer {
+  $c: #fafafa;
+  height: 100%;
+  padding-top: 37px;
+  background-color: $c;
+  background-image:
+    linear-gradient(darken($c, 1%) 1px, rgba(0,0,0,0) 1px),
+    linear-gradient(90deg, darken($c, 1%) 1px, rgba(0,0,0,0) 1px);
+  background-size: 20px;
+  text-align: center;
+}

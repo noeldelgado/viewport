@@ -1,13 +1,52 @@
-@include font-face("EntypoRegular", font-files(
-    "entypo.woff", woff,
-    "entypo.ttf", truetype,
-    "entypo.svg#EntypoRegular", svg
-  ),"entypo.eot");
+/**
+ * @font-face mixin
+ * https://gist.github.com/noeldelgado/c94b85bd2fa5a08c86a7
+*/
+@mixin font-face($name, $files, $eot: false, $weight: false, $style: false) {
+  $name: quote($name);
+  @font-face {
+    font-family: $name;
+    @if $eot {
+      src: url($eot);
+      $files: join("#{$eot}", $files);
+    }
+    src: add-font-format($files, $name);
+    @if $weight {
+      font-weight: $weight;
+    }
+    @if $style {
+      font-style: $style;
+    }
+  }
+}
+@function add-font-format($fonts, $name: '') {
+  $result: ();
+  @each $font in $fonts {
+    $format: '';
+    $extension: str-slice($font, str-index($font, '.') + 1);
+    @if $extension == "eot" {
+      $font: "#{$extension}?#iefix";
+      $format: 'embedded-opentype'
+    } @elseif $extension == "ttf" {
+      $format: 'truetype';
+    } @else {
+      $format: $extension;
+    }
+    @if $extension == "svg" {
+      $font: '#{$font}##{$name}';
+    }
+    $result: append($result, unquote('url("#{$font}") format("#{$format}")'), comma);
+  }
+  @return $result;
+}
 
+/**
+ * @font-smooth mixin
+ */
 @mixin font-smooth {
-    -webkit-font-smoothing:antialiased;
-    -moz-font-smoothing:antialiased;
-    font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-    font-smooth:always;
+  -webkit-font-smoothing:antialiased;
+  -moz-font-smoothing:antialiased;
+  font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  font-smooth:always;
 }
