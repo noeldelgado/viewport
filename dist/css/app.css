@@ -3,12 +3,16 @@
  * https://gist.github.com/noeldelgado/c94b85bd2fa5a08c86a7
 */
 /**
+ * str-last-index
+ * https://github.com/HugoGiraudel/SassyStrings/blob/master/stylesheets/private/_str-last-index.scss
+ */
+/**
  * @font-smooth mixin
  */
 @font-face {
   font-family: "EntypoRegular";
-  src: url("/assets/fonts/entypo.eot");
-  src: url("eot?#iefix") format("embedded-opentype"), url("/assets/fonts/entypo.woff") format("woff"), url("/assets/fonts/entypo.ttf") format("truetype"), url("/assets/fonts/entypo.svg#EntypoRegular") format("svg");
+  src: url("../../assets/fonts/entypo.eot");
+  src: url("eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/entypo.woff") format("woff"), url("../../assets/fonts/entypo.ttf") format("truetype"), url("../../assets/fonts/entypo.svg#EntypoRegular") format("svg");
   font-weight: "normal";
   font-style: "normal";
 }
