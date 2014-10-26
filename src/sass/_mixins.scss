@@ -23,7 +23,7 @@
   $result: ();
   @each $font in $fonts {
     $format: '';
-    $extension: str-slice($font, str-index($font, '.') + 1);
+    $extension: str-slice($font, str-last-index($font, '.') + 1);
     @if $extension == "eot" {
       $font: "#{$extension}?#iefix";
       $format: 'embedded-opentype'
@@ -37,6 +37,25 @@
     }
     $result: append($result, unquote('url("#{$font}") format("#{$format}")'), comma);
   }
+  @return $result;
+}
+
+/**
+ * str-last-index
+ * https://github.com/HugoGiraudel/SassyStrings/blob/master/stylesheets/private/_str-last-index.scss
+ */
+@function str-last-index($string, $needle) {
+  $index: str-index($string, $needle);
+  $result: $index;
+
+  @if $index {
+    @for $i from $index + str-length($needle) through str-length($string) {
+      @if str-slice($string, $i, $i + str-length($needle) - 1) == $needle {
+        $result: $i;
+      }
+    }
+  }
+
   @return $result;
 }
 
