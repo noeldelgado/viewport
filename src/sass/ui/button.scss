@@ -1,0 +1,28 @@
+#{$ns}button {
+  font-size: $base-font-size;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding: .2em .4em;
+  border: 1px solid $primary-color;
+  cursor: pointer;
+  font-family: inherit;
+  background-color: $white;
+  border-radius: 2px;
+  background-clip: padding-box;
+  color: $primary-color;
+  box-shadow: inset 0 -.15em 0 darken($white, 5%);
+
+  &:hover {
+  }
+
+  &:active {
+    top: 1px;
+  }
+  &:active,
+  &.active {
+    background-color: $primary-color;
+    color: $white;
+    box-shadow: none;
+  }
+}
